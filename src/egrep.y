@@ -214,7 +214,8 @@ yylex(void)
     case '\\':
 	if ((c = nextch()) == '\0')
 	    synerror();
-	/* not reached */
+	yylval = c;
+	return (CHAR);
     case '$':
     case '^':
 	c = '\n';
